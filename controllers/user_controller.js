@@ -69,16 +69,14 @@ const { emailExiste } = require('../helpers/db-validators');
     const {id} = req.params
   
     // fisicamente NO RECOMENDADO
-
       //const usuario = await Usuario.findByIdAndDelete(id);
 
       // METODO RECOMENDADO
-
       const usuario  = await Usuario.findByIdAndUpdate(id, {estado:  false });
+
+
     res.json({
-      
-        id,
-        usuario
+      usuario
     })
   }
 
